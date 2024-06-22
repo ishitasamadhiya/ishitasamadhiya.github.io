@@ -226,6 +226,38 @@
     #scrollToTopBtn:hover {
         background-color: #0056b3;
     }
+
+    .reviews-container {
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
+    .reviews-scroll {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .review-card {
+        flex: 0 0 auto;
+        width: 300px;
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .reviews-scroll::-webkit-scrollbar {
+        display: none;
+    }
+    .reviews-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
   </style>
 </head>
 
@@ -237,6 +269,7 @@
     <button class="nav-button" onclick="scrollToSection('main2')">Instructions</button>
     <button class="nav-button" onclick="scrollToSection('main3')">Picture Upload</button>
     <button class="nav-button" onclick="scrollToSection('bottom_1')">Recommended Skincare</button>
+    <button class="nav-button" onclick="goTo('/share-review.html')">Review us</button>
     <button class="nav-button" onclick="scrollToSection('bottom')">Contact</button>
   </nav>
 
@@ -269,6 +302,17 @@
         </form>
     </section>
 </div>
+<div class="reviews-container">
+  <h2>Reviews</h2>
+  <div id="reviewsScroll" class="reviews-scroll">
+      <!-- Reviews will be inserted here -->
+  </div>
+</div>
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+<script src="reviews.js?a=2"></script>
 <script>
     function openRosacea() {
         // Add your logic to open Rosacea.html here
@@ -278,34 +322,6 @@
         return false;
     }
   </script>
-  <div id="bottom_1">
-    <h2>Recommended Skincare</h2>
-    <br>
-    <h3>Best Sellers</h3>
-    <br>
-    <div style="display: flex; flex-direction: column;">
-      <section>
-        <img src="Hyperpigmentation%20conrad%20challenge.png" alt="Hyperpigmentation_Solution_Image" id="sigma">
-        <button id="sigma-btn" class="sigma">Buy Now</button>
-      </section>
-      <p style="font-size: 25px;">Price: $9.99</p>
-      <section>
-        <img src="ohio cream.png" alt="Fluorouracil Cream" id="ohio">
-        <button id="ohio-btn" class="sigma">Buy Now</button>
-      </section>
-      <p style="font-size: 25px;">Price: $11.99</p>
-      <section>
-        <img src="SKIBIDI_2.png" alt="Moisturizer" id="fish">
-        <button id="fish-btn" class="sigma">Buy Now</button>
-      </section>
-      <p style="font-size: 25px;">Price: $7.99</p>
-      <section>
-        <img src="Sunscreen.png" alt="Sunscreen" id="fanum">
-        <button id="fanum-btn" class="sigma">Buy Now</button>
-      </section>
-      <p style="font-size: 25px;">Price: $6.99</p>
-    </div>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script>
     document.getElementById('sigma-btn').addEventListener('click', function() {
@@ -418,6 +434,11 @@
         section.scrollIntoView({ behavior: 'smooth' });
       }
     }
+
+    function goTo(url) {
+      window.location.href = url;
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
 
         var scrollToTopBtn = document.getElementById("scrollToTopBtn");
