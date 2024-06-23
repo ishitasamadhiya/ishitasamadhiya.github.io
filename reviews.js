@@ -1,11 +1,12 @@
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAnClCh6QFTP9b2lfh9vSwOYWvAIDi9aBA",
-  authDomain: "skinsnap-ks.firebaseapp.com",
-  projectId: "skinsnap-ks",
-  storageBucket: "skinsnap-ks.appspot.com",
-  messagingSenderId: "588277611754",
-  appId: "1:588277611754:web:d7f0af653d40eb35d3ab93",
+  apiKey: "AIzaSyBPbY7Zkrjf_mVniJchFTOI0TwZt2dpk9U",
+  authDomain: "skinsnap-81662.firebaseapp.com",
+  projectId: "skinsnap-81662",
+  storageBucket: "skinsnap-81662.appspot.com",
+  messagingSenderId: "789374207591",
+  appId: "1:789374207591:web:8c0bfb64cd1fb5144cb6c2",
+  measurementId: "G-18QCVD2HB8"
 };
 
 // Initialize Firebase
