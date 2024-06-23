@@ -92,7 +92,7 @@ if (reviewFormEl) {
         avatarUrl: imageUrl,
       });
 
-      alert("Review submitted successfully!");
+      alert("Thank you for your review! It will be posted once approved.");
       document.getElementById("reviewForm").reset();
     } catch (error) {
       console.error("Error adding review: ", error);
