@@ -111,26 +111,17 @@
         <button class="nav-button" onclick="scrollToSection('main2', true)">Instructions</button>
         <button class="nav-button" onclick="scrollToSection('main3', true)">Picture Upload</button>
         <button class="nav-button" onclick="scrollToSection('reviewsScroll', true)">Reviews</button>
-        <button class="nav-button" onclick="goTo('/contact.html')">Contact</button>
+        <button class="nav-button" onclick="goTo('/share-review.html')">Review us</button>
       </nav>
    <br>
     <div class="container">
-        <h1>Review Us</h1>
-        <form id="reviewForm">
-            <label for="firstName">First name</label>
-            <input type="text" id="firstName" required placeholder="Bryan">
-            
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" required placeholder="Carson">
-            
-            <label for="email">Your e-mail</label>
-            <input type="email" id="email" required placeholder="myemail@domain.com">
-            
-            <label for="message">Message content:</label>
-            <textarea id="message" rows="4" required placeholder="The product for under eye bag was very good."></textarea>
-            
-            <button type="submit">Send</button>
-        </form>
+        <h1>Contact Us</h1>
+        <form id="contactForm" action="https://formspree.io/f/mzbnpodn" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Email ID" required>
+            <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
+            <button type="submit" id="submit">Submit</button>
+          </form>
     </div>
     <br>
     <footer style="background-color: #ff6b6b; color: white; padding: 40px 0; font-family: 'Raleway', sans-serif;">
@@ -165,26 +156,21 @@
           </div>
         </div>
       </footer>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
-    
-    <script src="reviews.js?a=1"></script>
-    <script>
-        function scrollToSection(sectionId, isExternal = false) {
-            if (isExternal) {
-                window.location.href = `/index.html#${sectionId}`;
-            } else {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
+<script>
+    function scrollToSection(sectionId, isExternal = false) {
+        if (isExternal) {
+            window.location.href = `/index.html#${sectionId}`;
+        } else {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
             }
         }
+    }
 
-        function goTo(url) {
-            window.location.href = url;
-        }
-    </script>
+    function goTo(url) {
+        window.location.href = url;
+    }
+</script>
 </body>
 </html>

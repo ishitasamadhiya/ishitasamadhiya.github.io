@@ -270,7 +270,7 @@
     <button class="nav-button" onclick="scrollToSection('main3')">Picture Upload</button>
     <button class="nav-button" onclick="scrollToSection('reviewsScroll')">Reviews</button>
     <button class="nav-button" onclick="goTo('/share-review.html')">Review us</button>
-    <button class="nav-button" onclick="scrollToSection('bottom')">Contact</button>
+    <button class="nav-button" onclick="goTo('/contact.html')">Contact</button>
   </nav>
 
   <!-- Content Sections -->
@@ -418,15 +418,38 @@
       document.getElementById('fanum-btn').style.display = 'block';
     });
   </script>
-    <div id="bottom" class="center-container">
-      <form id="contactForm" action="https://formspree.io/f/mzbnpodn" method="POST">
-        <h2>Contact</h2>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Email ID" required>
-        <textarea id="message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
-        <button type="submit" id="submit">Submit</button>
-      </form>
-    </div>
+    <footer style="background-color: #ff6b6b; color: white; padding: 40px 0; font-family: 'Raleway', sans-serif;">
+      <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+        <div>
+          <h3 style="font-size: 24px; margin-bottom: 20px;">Menu</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><a href="#main1" style="color: white; text-decoration: none; font-size: 16px;">Home page</a></li>
+            <li><a href="#main2" style="color: white; text-decoration: none; font-size: 16px;">Instructions</a></li>
+            <li><a href="#main3" style="color: white; text-decoration: none; font-size: 16px;">Picture Upload</a></li>
+            <li><a href="#reviewsScroll" style="color: white; text-decoration: none; font-size: 16px;">Reviews</a></li>
+            <li><a href="/share-review.html" style="color: white; text-decoration: none; font-size: 16px;">Review us</a></li>
+            <li><a href="/contact.html" style="color: white; text-decoration: none; font-size: 16px;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size: 24px; margin-bottom: 20px;">Contact</h3>
+          <p style="font-size: 16px;">
+            <img src="email-icon.png" alt="Email" style="width: 20px; margin-right: 2px;">
+            info@skinsnap.com<br>
+            <img src="phone-icon.png" alt="Phone" style="width: 20px; margin-right: 2px;">
+            123-456-789
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size: 24px; margin-bottom: 20px;">Follow us</h3>
+          <div>
+            <a href="#" style="margin-right: 10px;"><img src="facebook-icon.png" alt="Facebook" style="width: 30px;"></a>
+            <a href="#" style="margin-right: 10px;"><img src="instagram-icon.png" alt="Instagram" style="width: 30px;"></a>
+            <a href="#" style="margin-right: 10px;"><img src="youtube-icon.png" alt="YouTube" style="width: 30px;"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   <script>  
     function scrollToSection(sectionId) {
       var section = document.getElementById(sectionId);
